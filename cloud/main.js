@@ -22,7 +22,7 @@ AV.Cloud.define("getNeeds", function (request, response) {
     });
 });
 AV.Cloud.define("getNeeds", function (request, response) {
-    var query = new AV.Query("Needs");
+    var query = new AV.Query(request.params.table);
     query.find({
         success: function (results) {
             response.success(results);
